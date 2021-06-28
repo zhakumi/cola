@@ -21,9 +21,9 @@ public class UserController {
     }
 
     @GetMapping(value = "/user")
-    public MultiResponse<UserDTO> getById(@RequestParam(required = false) String id){
+    public MultiResponse<UserDTO> getById(@RequestParam(required = false) Long id){
         UserByIdQry userByIdQry = new UserByIdQry();
-        userByIdQry.setId(1L);
+        userByIdQry.setId(id);
         return IUserService.getById(userByIdQry);
     }
 

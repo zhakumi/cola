@@ -25,8 +25,6 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private UserByIdQryExe userByIdQryExe;
 
-    @Resource
-    private UserGateway userGateway;
 
     @Override
     public Response save(UserSaveCmd userSaveCmd) {
@@ -35,8 +33,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public MultiResponse<UserDTO> getById(UserByIdQry userByIdQry) {
-        // 直接访问领域层
-        User user = userGateway.getById(1L);
+
         return userByIdQryExe.execute(userByIdQry);
     }
 
