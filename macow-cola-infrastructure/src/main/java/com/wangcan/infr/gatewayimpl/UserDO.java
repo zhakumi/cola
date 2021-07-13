@@ -1,4 +1,4 @@
-package com.wangcan.infr.customer;
+package com.wangcan.infr.gatewayimpl;
 
 import lombok.Data;
 

@@ -33,7 +33,6 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public MultiResponse<UserDTO> getById(UserByIdQry userByIdQry) {
-
         return userByIdQryExe.execute(userByIdQry);
     }
 

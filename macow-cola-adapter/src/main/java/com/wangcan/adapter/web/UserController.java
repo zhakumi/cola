@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
 
+    /**
+     * 掉应用层 服务
+     */
     @Autowired
-    private IUserService IUserService;
+    private IUserService iUserService;
 
     @GetMapping(value = "/hello")
     public String hello(){
@@ -24,11 +27,11 @@ public class UserController {
     public MultiResponse<UserDTO> getById(@RequestParam(required = false) Long id){
         UserByIdQry userByIdQry = new UserByIdQry();
         userByIdQry.setId(id);
-        return IUserService.getById(userByIdQry);
+        return iUserService.getById(userByIdQry);
     }
 
     @PostMapping(value = "/user")
     public Response save(@RequestBody UserSaveCmd userSaveCmd){
-        return IUserService.save(userSaveCmd);
+        return iUserService.save(userSaveCmd);
     }
 }
